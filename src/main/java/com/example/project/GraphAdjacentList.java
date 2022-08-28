@@ -86,15 +86,13 @@ public class GraphAdjacentList implements Graph {
     }
 
     public int countConnectedComponents(){
-        if(numVertices== 0)
-            return 0;
- 
-        ArrayList<Vertex> verts = duplicateVertex();
-        for(Vertex v: verts){
+        GraphMatrix m= new GraphMatrix(numVertices);
+        for(int i= 0; i< numVertices; i++){
+            for(Vertex v2: vertices.get(i).adjacentVertices){
+                m.addEdge(i, vertices.indexOf(v2));
+            }
         }
-        int c= 0;
-
-        return c;
+        return m.countConnectedComponents();
     }
 
     public ArrayList<Vertex> duplicateVertex(){
