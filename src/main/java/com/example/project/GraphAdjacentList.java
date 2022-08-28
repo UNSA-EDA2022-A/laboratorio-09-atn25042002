@@ -104,12 +104,20 @@ public class GraphAdjacentList implements Graph {
     }
 
     public boolean removeVertex(int vertex){
+        for(int i= 0; i< numVertices; i++){
+            if(vertices.get(i).data== vertex)
+                break;
+            if(i== numVertices - 1)
+                return false;
+        }
+
         for(Vertex v: vertices){
             if(v.adjacentVertices.contains(vertices.get(vertex))){
                 v.removeAdjacentVertex(vertices.get(vertex).data);
             }
         }
         vertices.remove(vertex);
+        return true;
     }
 
     public static void main(String args[]) {
