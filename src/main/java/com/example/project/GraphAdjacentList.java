@@ -107,7 +107,7 @@ public class GraphAdjacentList implements Graph {
         for(int i= 0; i< numVertices; i++){
             if(vertices.get(i).data== vertex)
                 break;
-            if(i== numVertices - 1)
+            if(i== (numVertices - 1))
                 return false;
         }
 
