@@ -117,6 +117,7 @@ public class GraphAdjacentList implements Graph {
             }
         }
         vertices.remove(vertex);
+        numVertices--;
         return true;
     }
 
