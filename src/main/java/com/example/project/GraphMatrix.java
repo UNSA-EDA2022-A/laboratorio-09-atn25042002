@@ -78,8 +78,23 @@ public class GraphMatrix implements Graph {
     }
 
     public int countConnectedComponents() {
+        if(numVertices== 0)
+            return 0;
+        int c= 1;
+        ArrayList<Integer> connect= depthFirstSearch(0);
+        for(int i= 0; i< numVertices; i++){
+            if(connect.contains(i)) //Si es que no esta registrado
+                continue;
+            c++; //Aumenta el contador
+            unir(connect, depthFirstSearch(i));
+        }
+        return c;
+    }
 
-        return -1;
+    public void unir(ArrayList<Integer> a1, ArrayList<Integer> a2){
+        for(Integer i: a2){
+            a1.add(i);
+        }
     }
 
     public static void main(String args[]) {
