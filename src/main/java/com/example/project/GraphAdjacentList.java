@@ -91,7 +91,6 @@ public class GraphAdjacentList implements Graph {
  
         ArrayList<Vertex> verts = duplicateVertex();
         for(Vertex v: verts){
-            if()
         }
         int c= 0;
 
