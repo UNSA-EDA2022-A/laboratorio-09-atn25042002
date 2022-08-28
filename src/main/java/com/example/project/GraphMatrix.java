@@ -80,7 +80,7 @@ public class GraphMatrix implements Graph {
     public int countConnectedComponents() {
         if(numVertices== 0)
             return 0;
-        int c= 0;
+        int c= 1;
         ArrayList<Integer> connect= depthFirstSearch(0);
         for(int i= 0; i< numVertices; i++){
             if(connect.contains(i))
