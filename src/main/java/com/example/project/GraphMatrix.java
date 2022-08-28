@@ -83,7 +83,7 @@ public class GraphMatrix implements Graph {
         int c= 1;
         ArrayList<Integer> connect= depthFirstSearch(0);
         for(int i= 0; i< numVertices; i++){
-            if(connect.contains(i))
+            if(connect.contains(i)) //Si es que no esta registrado
                 continue;
             c++;
             unir(connect, depthFirstSearch(i));

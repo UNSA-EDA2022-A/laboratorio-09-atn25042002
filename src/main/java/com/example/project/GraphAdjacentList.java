@@ -86,7 +86,7 @@ public class GraphAdjacentList implements Graph {
     }
 
     public int countConnectedComponents(){
-        GraphMatrix m= new GraphMatrix(numVertices);
+        GraphMatrix m= new GraphMatrix(numVertices); //Es mas facil trabajar con la matriz
         for(int i= 0; i< numVertices; i++){
             for(Vertex v2: vertices.get(i).adjacentVertices){
                 m.addEdge(i, vertices.indexOf(v2));
@@ -95,18 +95,10 @@ public class GraphAdjacentList implements Graph {
         return m.countConnectedComponents();
     }
 
-    public ArrayList<Vertex> duplicateVertex(){
-        ArrayList<Vertex> d= new ArrayList<Vertex>();
-        for(Vertex v: this.vertices){
-            d.add(v);
-        }
-        return d;
-    }
-
     public boolean removeVertex(int vertex){
         int ind= 0;
         for(int i= 0; i< numVertices; i++){
-            if(vertices.get(i).data== vertex){
+            if(vertices.get(i).data== vertex){ //Encuentra el vertice
                 ind= i;
                 break;
             }
@@ -114,14 +106,12 @@ public class GraphAdjacentList implements Graph {
                 return false;
         }
 
-        for(Vertex v: vertices){
+        for(Vertex v: vertices){ //Remueve las aristas adyacentes
             if(v.adjacentVertices.contains(vertices.get(ind))){
                 v.removeAdjacentVertex(vertex);
             }
         }
-        /*for(Vertex v2: vertices.get(ind).adjacentVertices){
-            vertices.get(vertex).removeAdjacentVertex(v2.data);
-        }*/
+
         vertices.remove(ind);
         numVertices--;
         return true;
