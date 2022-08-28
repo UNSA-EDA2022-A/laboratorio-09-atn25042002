@@ -86,16 +86,24 @@ public class GraphAdjacentList implements Graph {
     }
 
     public int countConnectedComponents(){
-        if (this.numVertices== 0)
+        if(numVertices== 0)
             return 0;
-        ArrayList<Vertex> connect= new ArrayList<Vertex>();
-        int c= 0;
-        for(Vertex v: vertices){
-            if(connect.contains(v)
-               continue;
-            for(Vertex v2: v)
+ 
+        ArrayList<Vertex> verts = duplicateVertex();
+        for(Vertex v: verts){
+            if()
         }
+        int c= 0;
+
         return c;
+    }
+
+    public ArrayList<Vertex> duplicateVertex(){
+        ArrayList<Vertex> d= new ArrayList<Vertex>();
+        for(Vertex v: this.vertices){
+            d.add(v);
+        }
+        return d;
     }
 
     public boolean removeVertex(int vertex){
