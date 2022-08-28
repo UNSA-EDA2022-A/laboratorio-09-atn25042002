@@ -85,7 +85,7 @@ public class GraphMatrix implements Graph {
         for(int i= 0; i< numVertices; i++){
             if(connect.contains(i)) //Si es que no esta registrado
                 continue;
-            c++;
+            c++; //Aumenta el contador
             unir(connect, depthFirstSearch(i));
         }
         return c;
